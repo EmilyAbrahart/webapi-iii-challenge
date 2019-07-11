@@ -41,7 +41,8 @@ router.delete('/:id', validatePostId, async (req, res) => {
 
 router.put('/:id', validatePostId, validatePost, async (req, res) => {
 	const id = req.params.id;
-	const postData = req.body;
+  const postData = req.body;
+  
 	Post.update(id, postData)
 		.then(data => {
 			Post.getById(id).then(data => {
